@@ -2,7 +2,7 @@ FROM dromni/nerfstudio:0.2.2_root
 
 LABEL maintainer "Hyunsoo Cha <729steven@gmail.com>"
 LABEL title="Docker for nerfstudio"
-LABEL version="0.7"
+LABEL version="0.1"
 LABEL description="Docker build of PointAvatar based on torch1.11.0+cu113"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -68,14 +68,19 @@ RUN sed -i 's/ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' /root/.zs
 RUN echo 'source /root/.p10k.zsh' >> /root/.zshrc && \
     echo 'POWERLEVEL10K_DISABLE_CONFIGURATION=true' >> /root/.zshrc
 
-## Anaconda3
-# RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.zshrc && \
-#     echo "conda activate base" >> ~/.zshrc
-# ENV PATH /opt/conda/bin:$PATH
+# Install MiniConda
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
+    /bin/bash ~/miniconda.sh -b -p /opt/conda && \
+    rm ~/miniconda.sh && \
+    #/opt/conda/bin/conda clean -tipsy && \
+    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.zshrc && \
+    echo "conda activate base" >> ~/.zshrc
+ENV PATH /opt/conda/bin:$PATH
 
-# RUN . ~/.zshrc && \
-#     conda init zsh && \
-#     conda update conda
+RUN . ~/.zshrc && \
+    conda init zsh && \
+    conda update conda
 
 ## SSH
 # ssh에서 id:password를 설정합니다. 디폴트로 id = root, password = root으로 했습니다. 

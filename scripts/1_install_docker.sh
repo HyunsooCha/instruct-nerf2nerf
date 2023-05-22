@@ -14,6 +14,6 @@ docker run -d -it --gpus=all --shm-size=120G \
 echo "[INFO] docker run finished"
 docker start nerfstudio
 echo "[INFO] nerfstudio finished"
-docker exec nerfstudio pip install --upgrade pip setuptools && pip install -e .
+docker exec nerfstudio pip install --upgrade pip setuptools && pip install -e ../
 echo "[INFO] pip install finished for in2n"
 docker attach --detach-keys "ctrl-z" nerfstudio
