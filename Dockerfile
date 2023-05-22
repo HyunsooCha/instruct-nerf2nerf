@@ -107,8 +107,60 @@ RUN apt-get remove -y cmake && \
     ./cmake-3.24.2-linux-x86_64.sh --skip-license
 ENV PATH /home/cmake/bin:$PATH
 
+RUN conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
+RUN pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+RUN pip install torchtyping 
+
+RUN echo "function gitupdate() { \
+    git pull; \
+    echo '[INFO] pulling complete!'; \
+    git add .; \
+    echo '[INFO] adding complete!'; \
+    if [ -z \"\$1\" ]; \
+    then \
+        today=\`date +%m-%d-%Y\`; \
+        time=\`date +%H:%M:%S\`; \
+        git commit -m \"update \$time \$today\"; \
+    else \
+        git commit -m \"\$1\"; \
+    fi; \
+    echo '[INFO] commiting complete!'; \
+    git push origin main; \
+    echo '[INFO] pushing complete!'; \
+}; \
+alias githard='git reset --hard HEAD && git pull'; \
+alias gitsoft='git reset --soft HEAD^ '; \
+alias gitcache='git rm -r --cached .'; \
+alias ca='conda activate'; \
+alias czsh='code ~/.zshrc'; \
+alias szsh='source ~/.zshrc'; \
+alias ta='tmux attach -t'; \
+alias tl='tmux ls'; \
+alias tn='tmux new -s'; \
+function ffi2v() { \
+    ffmpeg -i \$1 -c:v libx264 -profile:v high -pix_fmt yuv420p \$2; \
+}; \
+function ffv2i() { \
+    ffmpeg -i \$1 -qscale:v 2 \$2; \
+}; \
+function ffglob() { \
+    ffmpeg -framerate \$1 -pattern_type glob -i \$2 -c:v libx264 -profile:v high -pix_fmt yuv420p \$3; \
+}; \
+alias wn='watch -d -n 0.5 nvidia-smi'; \
+alias gpu0='CUDA_VISIBLE_DEVICES=0'; \
+alias gpu1='CUDA_VISIBLE_DEVICES=1'; \
+alias gpu2='CUDA_VISIBLE_DEVICES=2'; \
+alias gpu3='CUDA_VISIBLE_DEVICES=3'; \
+alias gpu4='CUDA_VISIBLE_DEVICES=4'; \
+alias gpu5='CUDA_VISIBLE_DEVICES=5'; \
+alias gpu6='CUDA_VISIBLE_DEVICES=6'; \
+alias gpu7='CUDA_VISIBLE_DEVICES=7'; \
+alias ram='watch -d -n 0.5 free -h'; \
+alias caphere='sudo du -h --max-depth=1'; \
+alias python='ntfy done python'" >> ~/.zshrc
+
 ## set up the working directory
-WORKDIR /root/GitHub
+WORKDIR /root/GitHub/instruct-nerf2nerf
 
 EXPOSE 22
 
