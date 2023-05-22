@@ -68,20 +68,6 @@ RUN sed -i 's/ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' /root/.zs
 RUN echo 'source /root/.p10k.zsh' >> /root/.zshrc && \
     echo 'POWERLEVEL10K_DISABLE_CONFIGURATION=true' >> /root/.zshrc
 
-# Install MiniConda
-RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
-    /bin/bash ~/miniconda.sh -b -p /opt/conda && \
-    rm ~/miniconda.sh && \
-    #/opt/conda/bin/conda clean -tipsy && \
-    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
-    echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.zshrc && \
-    echo "conda activate base" >> ~/.zshrc
-ENV PATH /opt/conda/bin:$PATH
-
-RUN . ~/.zshrc && \
-    conda init zsh && \
-    conda update conda
-
 
 ## ntfy
 RUN python3 -m pip install git+https://github.com/dschep/ntfy.git@master --upgrade
@@ -106,10 +92,6 @@ RUN apt-get remove -y cmake && \
     chmod 777 ./cmake-3.24.2-linux-x86_64.sh && \
     ./cmake-3.24.2-linux-x86_64.sh --skip-license
 ENV PATH /home/cmake/bin:$PATH
-
-RUN conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
-RUN pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
-RUN pip install torchtyping 
 
 RUN echo "function gitupdate() { \
     git pull; \
