@@ -1,3 +1,5 @@
+# To Figure Out How many we need to get the identy-maintained cfg value
+
 CUDA_VISIBLE_DEVICES=0 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a beanie" --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 1.6 --pipeline.ip2p-device cuda:0
 CUDA_VISIBLE_DEVICES=1 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a beanie" --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 1.7 --pipeline.ip2p-device cuda:0
 CUDA_VISIBLE_DEVICES=2 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a beanie" --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 1.8 --pipeline.ip2p-device cuda:0

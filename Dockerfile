@@ -82,6 +82,13 @@ RUN . ~/.zshrc && \
     conda init zsh && \
     conda update conda
 
+
+## ntfy
+RUN python3 -m pip install git+https://github.com/dschep/ntfy.git@master --upgrade
+RUN mkdir -p ~/.config/ntfy
+RUN wget -O ~/.config/ntfy/ntfy.yml https://www.dropbox.com/s/v53awmllo1rqk1b/ntfy.yml
+
+
 ## SSH
 # ssh에서 id:password를 설정합니다. 디폴트로 id = root, password = root으로 했습니다. 
 # PermitRootLogin : 디폴트값을 yes로 해줘야 ssh 연결에서 문제가 안생깁니다.
