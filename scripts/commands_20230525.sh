@@ -1,5 +1,6 @@
 # To Figure Out How many we need to get the identy-maintained cfg value
 
+# VCSR
 CUDA_VISIBLE_DEVICES=0 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_1dot6 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 1.6 --pipeline.ip2p-device cuda:0
 CUDA_VISIBLE_DEVICES=1 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_1dot7 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 1.7 --pipeline.ip2p-device cuda:0
 CUDA_VISIBLE_DEVICES=2 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_1dot8 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 1.8 --pipeline.ip2p-device cuda:0
@@ -7,7 +8,15 @@ CUDA_VISIBLE_DEVICES=3 ns-train in2n --data ./data/datasets/yonwoo --load-dir ou
 CUDA_VISIBLE_DEVICES=4 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_2dot0 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.0 --pipeline.ip2p-device cuda:0
 CUDA_VISIBLE_DEVICES=5 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_2dot1 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.1 --pipeline.ip2p-device cuda:0
 CUDA_VISIBLE_DEVICES=6 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_2dot2 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.2 --pipeline.ip2p-device cuda:0
-CUDA_VISIBLE_DEVICES=7 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_2dot3 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.3 --pipeline.ip2p-device cuda:0
+
+# UFUS
+CUDA_VISIBLE_DEVICES=0 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_2dot3 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.3 --pipeline.ip2p-device cuda:0
+CUDA_VISIBLE_DEVICES=1 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_2dot4 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.4 --pipeline.ip2p-device cuda:0
+CUDA_VISIBLE_DEVICES=2 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_2dot5 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.5 --pipeline.ip2p-device cuda:0
+CUDA_VISIBLE_DEVICES=3 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a bucket hat" --timestamp image_cfg_2dot6 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.6 --pipeline.ip2p-device cuda:0
+
+
+
 
 CUDA_VISIBLE_DEVICES=0 ns-render --load-config outputs/yonwoo/in2n/2023-05-22_162059/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/2023-05-22_162059.mp4
 CUDA_VISIBLE_DEVICES=1 ns-render --load-config outputs/yonwoo/in2n/2023-05-22_162107/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/2023-05-22_162107.mp4
