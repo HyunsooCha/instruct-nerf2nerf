@@ -1,5 +1,5 @@
 #!/bin/zsh
-docker rm nerfstudio
+docker rm in2n
 set -e
 
 docker run -d -it --gpus=all --shm-size=120G \
@@ -9,5 +9,5 @@ docker run -d -it --gpus=all --shm-size=120G \
     -v $HOME/GitHub/IMavatar/data:/root/GitHub/IMavatar/data \
     -v $HOME/GitHub/IMavatar/code/runs:/root/GitHub/IMavatar/code/runs \
     --net=host \
-    --name nerfstudio \
-    nerfstudio:0.1
+    --name in2n \
+    in2n:0.1
