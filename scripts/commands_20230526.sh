@@ -10,10 +10,12 @@ CUDA_VISIBLE_DEVICES=7 ns-train in2n --data ./data/datasets/yonwoo --load-dir ou
 
 
 # render
-CUDA_VISIBLE_DEVICES=0 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot0/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot0.mp4
-CUDA_VISIBLE_DEVICES=1 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot1/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot1.mp4
-CUDA_VISIBLE_DEVICES=2 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot2/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot2.mp4
-CUDA_VISIBLE_DEVICES=3 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot3/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot3.mp4
-CUDA_VISIBLE_DEVICES=4 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot4/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot4.mp4
-CUDA_VISIBLE_DEVICES=5 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot5/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot5.mp4
-CUDA_VISIBLE_DEVICES=6 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot6/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot6.mp4
+CUDA_VISIBLE_DEVICES=0 ns-render --load-config outputs/yonwoo/in2n/cowboy_image_cfg_2dot0/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cowboy_image_cfg_2dot0.mp4
+CUDA_VISIBLE_DEVICES=1 ns-render --load-config outputs/yonwoo/in2n/cowboy_image_cfg_2dot1/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cowboy_image_cfg_2dot1.mp4
+CUDA_VISIBLE_DEVICES=2 ns-render --load-config outputs/yonwoo/in2n/cowboy_image_cfg_2dot2/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cowboy_image_cfg_2dot2.mp4
+CUDA_VISIBLE_DEVICES=3 ns-render --load-config outputs/yonwoo/in2n/cowboy_image_cfg_2dot3/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cowboy_image_cfg_2dot3.mp4
+
+CUDA_VISIBLE_DEVICES=4 ns-render --load-config outputs/yonwoo/in2n/beanie_text_cfg_7dot3/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/beanie_text_cfg_7dot3.mp4
+CUDA_VISIBLE_DEVICES=5 ns-render --load-config outputs/yonwoo/in2n/beanie_text_cfg_7dot1/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/beanie_text_cfg_7dot1.mp4
+CUDA_VISIBLE_DEVICES=6 ns-render --load-config outputs/yonwoo/in2n/beanie_text_cfg_6dot9/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/beanie_text_cfg_6dot9.mp4
+CUDA_VISIBLE_DEVICES=7 ns-render --load-config outputs/yonwoo/in2n/beanie_text_cfg_6dot7/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/beanie_text_cfg_6dot7.mp4
