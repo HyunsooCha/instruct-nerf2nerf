@@ -27,7 +27,14 @@ CUDA_VISIBLE_DEVICES=4 ns-train in2n --data ./data/datasets/yonwoo --load-dir ou
 CUDA_VISIBLE_DEVICES=5 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a baseball cap" --timestamp cap_image_cfg_2dot5 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.5 --pipeline.ip2p-device cuda:0
 CUDA_VISIBLE_DEVICES=6 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a baseball cap" --timestamp cap_image_cfg_2dot6 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.6 --pipeline.ip2p-device cuda:0
 
-
+# render
+CUDA_VISIBLE_DEVICES=0 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot0/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot0.mp4
+CUDA_VISIBLE_DEVICES=1 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot1/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot1.mp4
+CUDA_VISIBLE_DEVICES=2 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot2/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot2.mp4
+CUDA_VISIBLE_DEVICES=3 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot3/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot3.mp4
+CUDA_VISIBLE_DEVICES=4 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot4/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot4.mp4
+CUDA_VISIBLE_DEVICES=5 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot5/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot5.mp4
+CUDA_VISIBLE_DEVICES=6 ns-render --load-config outputs/yonwoo/in2n/cap_image_cfg_2dot6/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/cap_image_cfg_2dot6.mp4
 
 
 
@@ -48,6 +55,7 @@ CUDA_VISIBLE_DEVICES=0 ns-train in2n --data ./data/datasets/yonwoo --load-dir ou
 CUDA_VISIBLE_DEVICES=1 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a blond hair" --timestamp blond_hair_image_cfg_2dot2 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.2 --pipeline.ip2p-device cuda:0
 CUDA_VISIBLE_DEVICES=2 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a blond hair" --timestamp blond_hair_image_cfg_2dot3 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.3 --pipeline.ip2p-device cuda:0
 CUDA_VISIBLE_DEVICES=3 ns-train in2n --data ./data/datasets/yonwoo --load-dir outputs/yonwoo/nerfacto/2023-05-16_215645/nerfstudio_models --pipeline.prompt "Give him a blond hair" --timestamp blond_hair_image_cfg_2dot4 --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 2.4 --pipeline.ip2p-device cuda:0
+<<<<<<< HEAD
 
 # render
 CUDA_VISIBLE_DEVICES=0 ns-render --load-config outputs/yonwoo/in2n/blond_hair_image_cfg_2dot1/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/blond_hair_image_cfg_2dot1.mp4
@@ -67,3 +75,5 @@ CUDA_VISIBLE_DEVICES=0 ns-render --load-config outputs/yonwoo/in2n/blond_long_ha
 CUDA_VISIBLE_DEVICES=1 ns-render --load-config outputs/yonwoo/in2n/blond_long_hair_image_cfg_2dot2/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/blond_long_hair_image_cfg_2dot2.mp4
 CUDA_VISIBLE_DEVICES=2 ns-render --load-config outputs/yonwoo/in2n/blond_long_hair_image_cfg_2dot3/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/blond_long_hair_image_cfg_2dot3.mp4
 CUDA_VISIBLE_DEVICES=3 ns-render --load-config outputs/yonwoo/in2n/blond_long_hair_image_cfg_2dot4/config.yml --traj filename --camera-path-filename data/datasets/yonwoo/camera_paths/2023-05-16_215645.json --output-path renders/yonwoo/blond_long_hair_image_cfg_2dot4.mp4
+=======
+>>>>>>> 43c2687691431e9f19b7591b4c877efab392689a
