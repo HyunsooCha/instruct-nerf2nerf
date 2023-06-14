@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -e
 
-device=0
+device=3
 prompt="add a blue baseball cap"
 cfg_txt=7.5
 cfg_img=1.7

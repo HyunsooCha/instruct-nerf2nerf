@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -e
 
-device=0
+device=1
 prompt="put on a crown"
 cfg_txt=7.5
 cfg_img=2.2

@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -e
 
-device=4
+device=0
 prompt="make him have a bald hair, keep ears"
 cfg_txt=7.5
 cfg_img=2.9

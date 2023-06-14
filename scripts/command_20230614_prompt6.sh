@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -e
 
-device=1
+device=2
 prompt="Give him a cowboy hat"
 cfg_txt=7.5
 cfg_img=3.8
